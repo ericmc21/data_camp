@@ -61,6 +61,14 @@ function_definition = [
     }
 ]
 
+# Modify the messages
+messages.append(
+    {
+        "role": "system",
+        "content": "Do not assume any values for the responses.  If the text does not contain a review, or relavant information, such as product name, do not return a response.",
+    }
+)
+
 response = client.chat.completions.create(
     model=model,
     messages=messages,
